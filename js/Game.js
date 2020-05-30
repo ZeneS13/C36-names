@@ -23,4 +23,31 @@ class Game {
       form.display();
     }
   }
+  play(){
+    form.hide();
+    Player.getAll()
+    if(allPlayers!==undefined){
+      var y=0
+      for(var plr in allPlayers){
+        if(plr==="player"+player.index){
+          fill("red")
+        }
+        else{
+          fill("black")
+        }
+        y=y+60
+        text(allPlayers[plr].name+":"+allPlayers[plr].distance,130,y)
+      }
+    }
+    if(keyDown(UP_ARROW)){
+      player.distance+=50
+      player.update();
+    }
+
+
+
+  }
+
+
+
 }
